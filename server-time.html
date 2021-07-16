@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body id="body">
+
+<script>
+   function convertTZ(date, tzString) {
+        return new Date(date.toLocaleString("en-US", {timeZone: tzString}));   
+    }
+
+    const months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+
+    const date = new Date()
+    var convert = convertTZ(date, "Asia/Jakarta");
+    var day = convert.getDate()
+    var month = months[convert.getMonth()]
+    var year = convert.getFullYear()
+    var hour = convert.getHours()
+    var min = convert.getMinutes()
+    var seconds = convert.getSeconds()
+
+// getfullyear
+  document.getElementById("body").innerHTML = `${year}/${month}/${day} ${hour}:${min}:${seconds}`
+
+</script>
+
+</body>
+</html>
